@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Feeria (Kalifornijos kryptis, UAB)">
+    <!--<link rel="icon" href="static/favicon.ico">-->
+
+    <title>New longterm concurs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/app.css" rel="stylesheet">
+    <link href="static/css/components/select2.min.css" rel="stylesheet">
+    <link href="static/css/components/bootstrap-datetimepicker.min.css" rel="stylesheet">
+      
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      
+    <!-- Custom scripts for this template -->
+    <script src="static/js/components/select2.min.js"></script>
+    <script src="static/js/components/moment.js"></script>
+    <script src="static/js/components/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core JS -->
+    <script src="static/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+  <body class="new-longterm-concurs">
+
+    <!-- Top links nav -->
+    <nav class="navbar navbar-top">
+     <div class="container">
+        <!-- Top links -->
+        <ul class="nav navbar-nav">
+          <li><p class="project-excerpt" href="#">L-contract &mdash; transport and logistics services auction</p></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">info@l-contract.lt</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +370 (675) 10 255</a></li>
+        </ul>
+        <!-- Login right menu -->
+        <ul class="nav navbar-nav navbar-right navbar-login">
+          <li class="dropdown red">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Login or register <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Register</a></li>
+            </ul>
+          </li>
+        </ul>
+     </div>
+    </nav>
+    <!-- END Top links nav -->
+
+    <!-- Main nav -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img alt="LContract" src="static/img/logo.png">
+          </a>
+        </div>
+        <!-- Menu points -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Create new concurs <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">New onetime concurs</a></li>
+                <li><a href="#">New longterm concurs</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Onetime concurses list</a></li>
+            <li><a href="#">Longterm concurses list</a></li>
+            <li><a href="#">Subscribe to new concurses</a></li>
+            <li><a href="#">Companies list</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END Main nav -->
+      
+    <div class="content">
+    <div class="container">
+            <!-- Onetime concurs creation form -->
+            <div class="form form-new-longterm-concurs form-gray-bg">
+             <h1>Publicate new <strong>cargo transportation longterm</strong> concurs</h1>
+                
+            <!-- Nav tabs -->
+            <!--<div class="col-md-12 col-md-offset-4 min-borders">
+                <ul class="nav nav-longterm-tabs nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#concurs" aria-controls="concurs" role="tab" data-toggle="tab">New longterm concurs</a></li>
+                  <li role="presentation"><a href="#auction" aria-controls="auction" role="tab" data-toggle="tab">New longterm auction</a></li>
+                </ul>
+            </div> -->
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="concurs">
+                     <form name="form-new-onetime-concurs">
+
+                        <div class="col-md-6 min-borders">
+                          <div class="panel panel-default">
+
+                            <div class="panel-heading">Concurs description and terms</div>
+                            <div class="panel-body" style="min-height:203px;">
+                                <label class="label-inline">Contract start and finish dates</label>
+                              <div class="form-group form-inline">
+                                <input type="text" class="form-control date-picker" id="loading-date-from" placeholder="Contract starts from">
+                                <input type="text" class="form-control date-picker" id="loading-date-till" placeholder="Contract ends at">
+                              </div>
+                              <div class="form-group">
+                                <textarea class="form-control" name="additional-information" placeholder="Concurs description" rows="4"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 min-borders">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Additional information</div>
+                            <div class="panel-body">
+                              <div class="form-group">
+                                <textarea class="form-control" name="requirements" placeholder="Requirements" rows="3"></textarea>
+                              </div>
+                              <div class="form-group">
+                                <label>Contract conditions</label>
+                                <input type="file" class="form-control" id="exampleInputFile">
+                                <p class="help-block">Upload contract terms and conditions.</p>
+                              </div>
+                              <!--<div class="form-group">
+                                <label>Concurs prices template</label>
+                                <input type="file" class="form-control" id="exampleInputFile">
+                                <p class="help-block">Upload concurs prices template.</p>
+                              </div>-->
+                              <!--<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#addPriceTable">Attach price table</button>&nbsp;<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#editPriceTable">Edit price table</button>-->
+                            </div>
+                          </div>
+                        </div>
+                         
+                        <div class="col-md-12 min-borders">
+                          <div class="panel panel-default">
+
+                            <div class="panel-heading">Pricetable</div>
+                            <div class="panel-body">
+                              <div id="pricetable" class="form-price-table">
+                                  <div class="line ftl-line-1">
+                                      <div class="form-group line">
+                                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
+                                      </div>
+                                      <div class="form-group qty">
+                                        <select class="form-control" id="cargo-type">
+                                            <option value="0" selected>FTL</option>
+                                            <option value="1">LTL</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group loading-country">
+                                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group loading-city">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
+                                      </div>
+                                      <div class="form-group delivery-country">
+                                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group delivery-city">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
+                                      </div>
+                                      <div class="form-group car-type">
+                                        <select class="form-control" id="car-type">
+                                            <option value="0" selected>Car</option>
+                                            <option value="1">Tautliner 13,6m</option>
+                                            <option value="1">Refrigerator 13,6m</option>
+                                            <option value="1">Isotherm 13,6m</option>
+                                            <option value="1">Large 120cbm</option>
+                                            <option value="1">Mega 100cbm</option>
+                                            <option value="1">Container 20ft</option>
+                                            <option value="1">Container 40ft</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group cargo">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="">
+                                      </div>
+                                      <div class="form-group qty">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="">
+                                      </div>
+                                      <div class="form-group qty">
+                                        <select class="form-control" id="measure-units">
+                                            <option value="0" selected>EPal</option>
+                                            <option value="1">LDM</option>
+                                            <option value="1">CBM</option>
+                                            <option value="1">Kita</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group qty">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="">
+                                      </div>
+                                      <div class="form-group deliveries">
+                                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="">
+                                      </div>
+                                      <div class="form-group your-price">
+                                        <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                          <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
+                          <button type="button" class="btn btn-primary">Publicate longterm concurs</button>
+                          <!--<button type="button" class="btn btn-default">Save as draft</button>-->
+                        </div>
+                      </div>
+                     </form>      
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="auction">
+                     <form name="form-new-onetime-concurs">
+
+                        <div class="col-md-12 min-borders">
+                          <div class="panel panel-default">
+                            <div class="panel-heading">Send your request to us</div>
+                            <div class="panel-body">
+                              <div class="form-group">
+                                <p>Please contact our team if you want to publicate longtime contract. We will adapt concurs according your requirements and needs.</p>
+                                <textarea class="form-control" name="requirements" placeholder="Request details" rows="10"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <button type="button" class="btn btn-primary">Send request</button>
+                        </div>
+                      </div>
+
+                     </form>  
+            </div>
+          </div>
+            </div>
+    </div><!--.container-->
+    </div><!--.content-->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="row">
+     <div class="container">
+
+      <div class="col-md-3">
+         <h4>Contacts</h4>
+         <ul>
+           <li><img src="static/img/icon-footer-mail.png"> <a href="#">info@l-contract.lt</a></li>
+           <li><img src="static/img/icon-footer-phone.png"> <a href="#">+370 (675) 10 255</a></li>
+         </ul>
+      </div>
+         
+      <div class="col-md-3">
+         <h4>Connect with us</h4>
+         <ul>
+           <li><img src="static/img/icon-footer-fb.png"> <a href="#">Facebook</a></li>
+           <li><img src="static/img/icon-footer-li.png"> <a href="#">LinkedIn</a></li>
+         </ul>
+      </div>
+      <div class="col-md-3">
+         <h4>Sitemap</h4>
+         <ul>
+           <li><a href="#">Onetime contests</a></li>
+           <li><a href="#">Longterm contests</a></li>
+           <li><a href="#">Subscribe to new contests</a></li>
+           <li><a href="#">Company search</a></li>
+           <li><a href="#">Create new onetime contest</a></li>
+           <li><a href="#">Create new longterm contest</a></li>
+         </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>About LContract</h4>
+        <p>UAB „Tempus Trans“ — efektyvias transporto ir logistikos paslaugas teikianti kompanija. Savo veiklą pradėjusi 2006 metais kaip krovinių gabenimo paslaugas teikianti įmonė, „Tempus Trans“ išaugo iki įmonių grupės, galinčios klientams.</p>
+      </div>
+         
+     </div>
+     </div>
+    </footer>
+    <!-- END Footer-->
+
+    <!-- Modal: add price table -->
+    <div class="modal fade" id="addPriceTable" tabindex="-1" role="dialog" aria-labelledby="addPriceTableLabel">
+      <div class="modal-dialog modal-price-table" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">New pricetable</h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Add pricetable</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Modal: edit price table -->
+    <div class="modal fade" id="editPriceTable" tabindex="-1" role="dialog" aria-labelledby="newOfferLabel">
+      <div class="modal-dialog modal-price-table" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit pricetable</h4>
+          </div>
+          <div class="modal-body">
+                    <form class="form-price-table">
+                      <div class="form-group">
+                        <label>Nr.</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
+                      </div>
+                      <div class="form-group loading-country">
+                        <label>Loading country</label>
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group loading-city">
+                        <label>Loading city/ZIP</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
+                      </div>
+                      <div class="form-group delivery-country">
+                        <label>Delivery country</label>
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group delivery-city">
+                        <label>Delivery city/ZIP</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
+                      </div>
+                      <div class="form-group cargo">
+                        <label>Car</label>
+                        <select class="form-control" id="car-type">
+                            <option value="0">Select car type</option>
+                            <option value="1" selected>Tautliner 13,6m</option>
+                            <option value="1">Refrigerator 13,6m</option>
+                            <option value="1">Isotherm 13,6m</option>
+                            <option value="1">Large 120cbm</option>
+                            <option value="1">Mega 100cbm</option>
+                            <option value="1">Container 20ft</option>
+                            <option value="1">Container 40ft</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <label>Cargo type</label>
+                        <select class="form-control" id="cargo-type">
+                            <option value="0" selected>FTL</option>
+                            <option value="1">LTL</option>
+                        </select>
+                      </div>
+                      <div class="form-group cargo">
+                        <label>Cargo</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
+                      </div>
+                      <div class="form-group qty">
+                        <label>Qty.</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="5">
+                      </div>
+                      <div class="form-group qty">
+                        <label>Units</label>
+                        <select class="form-control" id="measure-units">
+                            <option value="0">EPal</option>
+                            <option value="1">LDM</option>
+                            <option value="1" selected>CBM</option>
+                            <option value="1">Kita</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <label>Weight</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="2000">
+                      </div>
+                      <div class="form-group deliveries">
+                        <label>Deliveries/month</label>
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="10">
+                      </div>
+                      <div class="form-group your-price">
+                        <label>Actions</label>
+                      <div class="clearfix"></div>
+                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      </div>
+    
+                      <div class="clearfix"></div>
+    
+                      <!-- Row -->
+                      <div class="form-group line">
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
+                      </div>
+                      <div class="form-group loading-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group loading-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
+                      </div>
+                      <div class="form-group delivery-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group delivery-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
+                      </div>
+                      <div class="form-group cargo">
+                        <select class="form-control" id="car-type">
+                            <option value="0">Select car type</option>
+                            <option value="1" selected>Tautliner 13,6m</option>
+                            <option value="1">Refrigerator 13,6m</option>
+                            <option value="1">Isotherm 13,6m</option>
+                            <option value="1">Large 120cbm</option>
+                            <option value="1">Mega 100cbm</option>
+                            <option value="1">Container 20ft</option>
+                            <option value="1">Container 40ft</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="cargo-type">
+                            <option value="0" selected>FTL</option>
+                            <option value="1">LTL</option>
+                        </select>
+                      </div>
+                      <div class="form-group cargo">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="7">
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="measure-units">
+                            <option value="0">EPal</option>
+                            <option value="1" selected>LDM</option>
+                            <option value="1">CBM</option>
+                            <option value="1">Kita</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="900">
+                      </div>
+                      <div class="form-group deliveries">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="5">
+                      </div>
+                      <div class="form-group your-price">
+                      <div class="clearfix"></div>
+                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      </div>
+    
+                      <div class="clearfix"></div>
+    
+                      <!-- Row -->
+                      <div class="form-group line">
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="3" disabled>
+                      </div>
+                      <div class="form-group loading-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group loading-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
+                      </div>
+                      <div class="form-group delivery-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0">Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group delivery-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
+                      </div>
+                      <div class="form-group cargo">
+                        <select class="form-control" id="car-type">
+                            <option value="0">Select car type</option>
+                            <option value="1" selected>Tautliner 13,6m</option>
+                            <option value="1">Refrigerator 13,6m</option>
+                            <option value="1">Isotherm 13,6m</option>
+                            <option value="1">Large 120cbm</option>
+                            <option value="1">Mega 100cbm</option>
+                            <option value="1">Container 20ft</option>
+                            <option value="1">Container 40ft</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="cargo-type">
+                            <option value="0" selected>FTL</option>
+                            <option value="1">LTL</option>
+                        </select>
+                      </div>
+                      <div class="form-group cargo">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="9">
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="measure-units">
+                            <option value="0" selected>EPal</option>
+                            <option value="1">LDM</option>
+                            <option value="1">CBM</option>
+                            <option value="1">Kita</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="500">
+                      </div>
+                      <div class="form-group deliveries">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="1">
+                      </div>
+                      <div class="form-group your-price">
+                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      </div>
+    
+                      <div class="clearfix"></div>
+        
+                      <!-- Row -->
+                      <div class="form-group line">
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="4" disabled>
+                      </div>
+                      <div class="form-group loading-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group loading-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
+                      </div>
+                      <div class="form-group delivery-country">
+                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                <option value="0" selected>Country</option>
+                        </select>
+                      </div>
+                      <div class="form-group delivery-city">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
+                      </div>
+                      <div class="form-group cargo">
+                        <select class="form-control" id="car-type">
+                            <option value="0" selected>Select car type</option>
+                            <option value="1">Tautliner 13,6m</option>
+                            <option value="1">Refrigerator 13,6m</option>
+                            <option value="1">Isotherm 13,6m</option>
+                            <option value="1">Large 120cbm</option>
+                            <option value="1">Mega 100cbm</option>
+                            <option value="1">Container 20ft</option>
+                            <option value="1">Container 40ft</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="cargo-type">
+                            <option value="0" selected>FTL</option>
+                            <option value="1">LTL</option>
+                        </select>
+                      </div>
+                      <div class="form-group cargo">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="">
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="">
+                      </div>
+                      <div class="form-group qty">
+                        <select class="form-control" id="measure-units">
+                            <option value="0" selected>EPal</option>
+                            <option value="1">LDM</option>
+                            <option value="1">CBM</option>
+                            <option value="1">Kita</option>
+                        </select>
+                      </div>
+                      <div class="form-group qty">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="">
+                      </div>
+                      <div class="form-group deliveries">
+                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="">
+                      </div>
+                      <div class="form-group your-price">
+                        <button type="button" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                      </div>
+                    </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        //$('select').select2();
+        $('.valid-till').datetimepicker({
+            format: "YYYY-MM-DD HH:mm",
+            sideBySide: true
+        });
+        $('.date-picker').datetimepicker({
+            format: "YYYY-MM-DD",
+            sideBySide: true
+        });
+    </script>
+    
+    <!-- TO DO: a lot of works -->
+    <script type="text/javascript">
+    
+            var scntDiv = $('#pricetable');
+            var i = scntDiv.size() + 1;
+           
+            /* Add new line logics -- need to discuss */
+            $(document).on('click', '#addLine', function(){
+            
+            var fValue = $(this).parent().parent().find('#cargo-type').val();
+            if ( fValue == 0 ) {
+                
+                /* Add FTL line */
+                console.log('value = FTL, ' + fValue);
+                
+                $('<div class="line ftl-line-' + i +'"><div class="form-group line"><input type="text" class="form-control" placeholder="Nr." value="' + i + '" disabled> </div><div class="form-group qty"> <select class="form-control" id="cargo-type"> <option value="0" selected>FTL</option> <option value="1">LTL</option> </select> </div><div class="form-group loading-country"> <select class="form-control" id="delivery-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group loading-city"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value=""> </div><div class="form-group delivery-country"> <select class="form-control" id="delivery-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group delivery-city"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value=""> </div><div class="form-group car-type"> <select class="form-control" id="car-type"> <option value="0" selected>Car</option> <option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value=""> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value=""> </div><div class="form-group deliveries"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value=""> </div><div class="form-group your-price"> <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></div></div>').appendTo(scntDiv);
+                
+                /* Remove add button classes for added line and add remove button classes */
+                $(this).removeClass('btn-success')
+                   .removeClass('glyphicon-plus')
+                   .addClass('btn-primary')
+                   .removeClass('glyphicon-minus')
+                   .attr('id','removeLine');
+                
+                $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                i++;
+                
+            } else {
+                
+                /* Add LTL line */
+                console.log('value = LTL, ' + fValue);
+                
+                $('<div class="subline ltl-subline-' + i +'"><div class="form-group line"></div><div class="form-group qty"></div><div class="form-group loading-country"></div><div class="form-group loading-city"></div><div class="form-group delivery-country"></div><div class="form-group delivery-city"></div><div class="form-group car-type"> <select class="form-control" id="car-type"> <option value="0" selected>Car</option> <option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value=""> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value=""> </div><div class="form-group deliveries"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value=""> </div><div class="form-group your-price"> <button type="button" id="addSubLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></button></div></div> <div class="line ftl-line-' + i +'"><div class="form-group line"><input type="text" class="form-control" placeholder="Nr." value="' + i + '" disabled> </div><div class="form-group qty"> <select class="form-control" id="cargo-type"> <option value="0" selected>FTL</option> <option value="1">LTL</option> </select> </div><div class="form-group loading-country"> <select class="form-control" id="delivery-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group loading-city"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value=""> </div><div class="form-group delivery-country"> <select class="form-control" id="delivery-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group delivery-city"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value=""> </div><div class="form-group car-type"> <select class="form-control" id="car-type"> <option value="0" selected>Car</option> <option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value=""> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value=""> </div><div class="form-group deliveries"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value=""> </div><div class="form-group your-price"> <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></div></div>').appendTo(scntDiv);
+                $(document).on('click', '#addSubLine', function(){
+                    //alert('aaa, subline');
+                    $('<div class="subline ltl-subline-' + i +'"><div class="form-group line"></div><div class="form-group qty"></div><div class="form-group loading-country"></div><div class="form-group loading-city"></div><div class="form-group delivery-country"></div><div class="form-group delivery-city"></div><div class="form-group car-type"> <select class="form-control" id="car-type"> <option value="0" selected>Car</option> <option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value=""> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group qty"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value=""> </div><div class="form-group deliveries"> <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value=""> </div><div class="form-group your-price"> <button type="button" id="addSubLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span></button></div></div>').appendTo($(this).parent().parent('.subline'));
+                    $(this).removeClass('btn-success')
+                       .removeClass('glyphicon-step-backward')
+                       .addClass('btn-primary')
+                       .removeClass('glyphicon-step-backward')
+                       .attr('id','removeSubLine');
+                });
+                
+                /* Remove add button classes for added line and add remove button classes */
+                $(this).removeClass('btn-success')
+                   .removeClass('glyphicon-plus')
+                   .addClass('btn-primary')
+                   .removeClass('glyphicon-minus')
+                   .attr('id','removeLine');
+                
+                $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                i++;
+            }
+                
+            return false;
+        });
+        
+        /* Remove line (works good only for FTL now) */
+        $(document).on('click', '#removeLine', function(){
+            if( i > 0 ) {
+                $(this).parents('.line').remove();
+                i--;
+            }
+            return false;
+        });
+        $(document).on('click', '#removeSubLine', function(){
+            if( i > 0 ) {
+                $(this).parent().parent('.subline').remove();
+                i--;
+            }
+            return false;
+        });
+        
+    </script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+  </body>
+</html>

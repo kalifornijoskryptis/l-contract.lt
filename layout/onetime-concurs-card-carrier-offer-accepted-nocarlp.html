@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Feeria (Kalifornijos kryptis, UAB)">
+    <!--<link rel="icon" href="static/favicon.ico">-->
+
+    <title>Onetime concurs card - Carrier</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/app.css" rel="stylesheet">
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      
+    <!-- Custom scripts for this template -->
+    <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="http://www.amcharts.com/lib/3/serial.js"></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core JS -->
+    <script src="static/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="concurs-card">
+
+    <!-- Top links nav -->
+    <nav class="navbar navbar-top">
+     <div class="container">
+        <!-- Top links -->
+        <ul class="nav navbar-nav">
+          <li><p class="project-excerpt" href="#">L-contract — transport and logistics services auction</p></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">info@l-contract.lt</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +370 (675) 10 255</a></li>
+        </ul>
+        <!-- Login right menu -->
+        <ul class="nav navbar-nav navbar-right navbar-login">
+          <li class="dropdown red">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Login or register <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Register</a></li>
+            </ul>
+          </li>
+        </ul>
+     </div>
+    </nav>
+    <!-- END Top links nav -->
+
+    <!-- Main nav -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img alt="LContract" src="static/img/logo.png">
+          </a>
+        </div>
+        <!-- Menu points -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Create new concurs <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">New onetime concurs</a></li>
+                <li><a href="#">New longterm concurs</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Onetime concurses list</a></li>
+            <li><a href="#">Longterm concurses list</a></li>
+            <li><a href="#">Subscribe to new concurses</a></li>
+            <li><a href="#">Companies list</a></li>
+              
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END Main nav -->
+
+    <!-- Content -->
+    <div class="content">
+      <div class="container">
+          
+          
+        <div class="page-header">
+          <h1>Car transportation from Dordrecht, NL to Vilnius, LT</h1>
+        </div>
+
+                <div class="col-md-12 form-gray-bg">
+                        <div class="col-md-5">
+                            <h5 class="theader">Cargo description</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Services type:</td>
+                                <td>Cargo transportation</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading address:</td>
+                                <td><img src="static/img/countries/nl.png"> NL, Dordrecht, NL-1512</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading dates:</td>
+                                <td>2015.07.15 - 2015.07.18</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery address:</td>
+                                <td><img src="static/img/countries/lt.png"> LT, Vilnius, Perkūnkiemio g. 13-91, LT-12114</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery dates:</td>
+                                <td>2015.07.17 - 2015.07.20</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Weight:</td>
+                                <td>2100 kg</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Count:</td>
+                                <td>1 car</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Cargo type:</td>
+                                 <td>Less-than-truckload (LTL)</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Description:</td>
+                                 <td>Car transportation from Dordrecht, NL to Vilnius, LT. We need to make it ASAP!</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Responsible person:</td>
+                                <td>Alexander Mukbil, +370 678 20768</td>
+                              </tr>
+                              
+                              <tr>
+                                <td class="field-name">ADR:</td>
+                                <td>5 class</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"> Temperature requirements:</td>
+                                <td>-12.5 &#8451;</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Lift options:</td>
+                                <td>On load, On unload</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Unloading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Additional information:</td>
+                                <td>Please be careful during load/unload this car. Thanks a lot.</td>
+                              </tr>
+                                
+                              <tr>
+                                <td class="field-name"><strong>Payment type:</strong></td>
+                                <td>wiretransfer during 5 business days</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"><strong>Offered price, &euro;</strong></td>
+                                <td>459.00</td>
+                              </tr>
+                            </table>
+                            
+                        </div>
+                        <div class="col-md-7">
+                            <div id="diagram"></div>
+                        </div>
+                </div>
+          
+                <div class="col-md-12 min-borders">
+                    <h3>Actual offers from carriers (4)</h3>
+                        <div class="list-group-item confirmed">
+                          <div class="offer-info pull-left">
+                            <h4 class="list-group-item-heading">Price: <span class="price">&euro; 159.00</span><span class="badge">Cash</span><span class="badge confirmed">My offer</span><span class="badge confirmed">Deal accepted, provide car license plates</span></h4>
+                            <p class="list-group-item-text">Loading: 2015.07.15 - 2015.07.20  |  Delivery: 2015.07.23 - 2015.07.25  |  Alex Valeiko, +37067820785</p>
+                          </div>
+                          <div class="offer-actions pull-right">
+                              <div class="actual-timer pull-right text-center">
+                                  <p class="help-text">Car license plates:</p>
+                                  <p class="time-text">please provide...</p>
+                              </div>
+                              <div class="offer-buttons pull-left">
+                                  <a href="#"><div class="conditions-icon file-success"></div></a>
+                                  <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#enterLicensePlates">Add car license plates</button>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="list-group">
+                          <div class="list-group-item not-actual">
+                            <div class="offer-info pull-left">
+                              <h4 class="list-group-item-heading">Price: <span class="price">&euro; 159.00</span></h4>
+                              <p class="list-group-item-text">Loading: 2015.07.15 - 2015.07.20  |  Delivery: 2015.07.23 - 2015.07.25</p>
+                            </div>
+                            <div class="offer-actions pull-right">
+                                <div class="actual-timer pull-right text-center">
+                                    <p class="help-text">Offer actual till:</p>
+                                    <p class="time-text">-</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item not-actual">
+                            <div class="offer-info pull-left">
+                              <h4 class="list-group-item-heading">Price: <span class="price">&euro; 159.00</span></h4>
+                              <p class="list-group-item-text">Loading: 2015.07.15 - 2015.07.20  |  Delivery: 2015.07.23 - 2015.07.25</p>
+                            </div>
+                            <div class="offer-actions pull-right">
+                                <div class="actual-timer pull-right text-center">
+                                    <p class="help-text">Offer actual till:</p>
+                                    <p class="time-text">-</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item not-actual">
+                            <div class="offer-info pull-left">
+                              <h4 class="list-group-item-heading">Price: <span class="price">&euro; 159.00</span></h4>
+                              <p class="list-group-item-text">Loading: 2015.07.15 - 2015.07.20  |  Delivery: 2015.07.23 - 2015.07.25</p>
+                            </div>
+                            <div class="offer-actions pull-right">
+                                <div class="actual-timer pull-right text-center">
+                                    <p class="help-text">Offer actual till:</p>
+                                    <p class="time-text">-</p>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item not-actual">
+                            <div class="offer-info pull-left">
+                              <h4 class="list-group-item-heading">Price: <span class="price">&euro; 159.00</span></h4>
+                              <p class="list-group-item-text">Loading: 2015.07.15 - 2015.07.20  |  Delivery: 2015.07.23 - 2015.07.25</p>
+                            </div>
+                            <div class="offer-actions pull-right">
+                                <div class="actual-timer pull-right text-center">
+                                    <p class="help-text">Offer actual till:</p>
+                                    <p class="time-text">-</p>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>           
+      </div>
+    </div>
+    <!-- END Content -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="row">
+     <div class="container">
+
+      <div class="col-md-3">
+         <h4>Contacts</h4>
+         <ul>
+           <li><img src="static/img/icon-footer-mail.png"> <a href="#">info@l-contract.lt</a></li>
+           <li><img src="static/img/icon-footer-phone.png"> <a href="#">+370 (675) 10 255</a></li>
+         </ul>
+      </div>
+         
+      <div class="col-md-3">
+         <h4>Connect with us</h4>
+         <ul>
+           <li><img src="static/img/icon-footer-fb.png"> <a href="#">Facebook</a></li>
+           <li><img src="static/img/icon-footer-li.png"> <a href="#">LinkedIn</a></li>
+         </ul>
+      </div>
+      <div class="col-md-3">
+         <h4>Sitemap</h4>
+         <ul>
+           <li><a href="#">Onetime contests</a></li>
+           <li><a href="#">Longterm contests</a></li>
+           <li><a href="#">Subscribe to new contests</a></li>
+           <li><a href="#">Company search</a></li>
+           <li><a href="#">Create new onetime contest</a></li>
+           <li><a href="#">Create new longterm contest</a></li>
+         </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>About LContract</h4>
+        <p>UAB „Tempus Trans“ — efektyvias transporto ir logistikos paslaugas teikianti kompanija. Savo veiklą pradėjusi 2006 metais kaip krovinių gabenimo paslaugas teikianti įmonė, „Tempus Trans“ išaugo iki įmonių grupės, galinčios klientams.</p>
+      </div>
+         
+     </div>
+     </div>
+    </footer>
+    <!-- END Footer-->
+
+    <!-- Modal: license plates -->
+    <div class="modal fade" id="enterLicensePlates" tabindex="-1" role="dialog" aria-labelledby="enterLicensePlatesLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Please enter car license plates</h4>
+          </div>
+          <div class="modal-body">
+            <p>Please provide to the customer car license plate number and (if needed) trailer license plate number. You can provide this information later.</p>
+            <input type="text" class="form-control" placeholder="Trailer license plate"> 
+            <input type="text" class="form-control" placeholder="Truck license plate *" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Will provide license plates later</button>
+            <button type="button" class="btn btn-primary">Send license plates to customer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+
+    <script type="text/javascript">
+        var chart = AmCharts.makeChart( "diagram", {
+          "type": "serial",
+          "dataProvider": [ {
+            "company": "2015-11-20",
+            "price": 159.11
+          }, {
+            "company": "2015-11-26",
+            "price": 282.15
+          }, {
+            "company": "2015-11-27",
+            "price": 322.10
+          }, {
+            "company": "2015-11-28",
+            "price": 122.50
+          }],
+          "valueAxes": [ {
+            "gridColor": "#FFFFFF",
+            "gridAlpha": 0.2,
+            "dashLength": 0
+          } ],
+          "gridAboveGraphs": false,
+          "startDuration": 1,
+          "graphs": [ {
+            "balloonText": "[[category]]: <b>&euro;[[value]]</b>",
+            "fillAlphas": 0.8,
+            "lineAlpha": 0.2,
+            "type": "column",
+            "valueField": "price"
+          } ],
+          "chartCursor": {
+            "categoryBalloonEnabled": false,
+            "cursorAlpha": 0,
+            "zoomable": false
+          },
+          "categoryField": "company",
+          "categoryAxis": {
+            "gridPosition": "start",
+            "gridAlpha": 0,
+            "tickPosition": "start",
+            "tickLength": 20
+          },
+          "export": {
+            "enabled": true
+          }
+        });
+    </script>     
+
+  </body>
+</html>
