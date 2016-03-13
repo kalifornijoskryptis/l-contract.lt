@@ -2162,20 +2162,37 @@ span.rating > .negative {
 .form-price-table .form-group.cargo,
 .form-price-table .form-group.car-type {
     margin-right: 5px;
-    width: 9.5%;
+    width: 10%;
 }
 .form-price-table .form-group.qty {
     width: 6%;
     margin-right: 5px;
 }
 .form-price-table .form-group.deliveries {
-    width: 6%;
+    width: 10%;
     margin-right: 5px;
+}
+.form-price-table .form-group.positions {
+    margin: 0 5px;
 }
 .form-price-table .price-table {
     border-collapse: inherit;
     border-spacing: 3px;
 }
+#addPositions .form-group {
+    margin-bottom: 3px;
+}
+#addPositions #nr {
+    width: 40px;
+    margin-right: 5px;
+    float: left;
+}
+#addPositions #positionName {
+    width: 80%;
+    margin-right: 5px;
+    float: left;
+}
+
 @media screen and (max-width: 767px) {
     .modal-dialog.modal-price-table {
         width: 85%;
