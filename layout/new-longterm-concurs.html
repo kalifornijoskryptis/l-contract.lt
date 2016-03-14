@@ -142,7 +142,7 @@
                                 <input type="text" class="form-control date-picker" id="loading-date-till" placeholder="Contract ends at">
                               </div>
                               <div class="form-group">
-                                <textarea class="form-control" name="additional-information" placeholder="Concurs description" rows="4"></textarea>
+                                <textarea class="form-control" name="additional-information" placeholder="Contest name, conditions, additional information" rows="4"></textarea>
                               </div>
                               
                               <label>Cargo type</label>
@@ -313,9 +313,9 @@
                         </div>
                          
                       <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-md-6 col-md-offset-4">
                           <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
-                          <button type="button" class="btn btn-primary">Publicate longterm concurs</button>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicateLongterm">Publicate longterm concurs</button>
                           <!--<button type="button" class="btn btn-default">Save as draft</button>-->
                         </div>
                       </div>
@@ -390,7 +390,65 @@
      </div>
     </footer>
     <!-- END Footer-->
+
+    <!-- Modal: longterm confirmation -->
+    <div id="publicateLongterm" class="modal modal-confirm-publication fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Are you sure that information correct?</h4>
+          </div>
+          <div class="modal-body">
+                        <div class="col-md-6 min-borders">
+                            <h5 class="theader">Concurs description</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Services type:</td>
+                                <td>Cargo transportation</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Terms:</td>
+                                <td>2 years (2015.07.17 - 2017.07.17)</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Concurs type:</td>
+                                <td>Concurs</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Valid till:</td>
+                                <td>2015.12.15</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Responsible person:</td>
+                                <td>Nerijus Valeiko, +37067820785</td>
+                              </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 min-borders">
+                            <h5 class="theader">Additional information</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Description:</td>
+                                <td>Forest transportation from Malme, N to Kaunas, LT</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Requirements:</td>
+                                <td>You should have on your company balance 1000 Volvo FH17 trucks</td>
+                              </tr>
+                            </table>
+                        </div>
+            <textarea class="form-control" id="emailList" placeholder="Add emails divided by comma to send link to this contest (ex., mail@domain.com, pastas@pastas.lt)"></textarea>
+          </div>
+          <div class="modal-footer clearfix">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Publicate onetime contest</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
       
+    <!-- Modal: add/edit positions -->
     <div id="addPositions" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">

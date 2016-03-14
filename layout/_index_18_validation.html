@@ -1599,10 +1599,10 @@
         $('select').select2();
         
         /* Valid till validation */
-        $currentdate = moment().valueOf();
+        $currentdate = moment().add(24, 'h').valueOf();
         $('.valid-till').datetimepicker({
             format: "YYYY-MM-DD HH:mm",
-            //minDate: $currentdate,
+            minDate: $currentdate,
             sideBySide: true,
             locale: "LT"
         });

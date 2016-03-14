@@ -689,9 +689,9 @@
                 </div>
 
                 <div class="col-md-5">
-                  <a class="additional-information-link" role="button" data-toggle="collapse" href="#additional-information" aria-expanded="false" aria-controls="additional-information">
-                    Additional information
-                  </a>
+                  <div class="additional-information-link collapsed" role="button" data-toggle="collapse" href="#additional-information" aria-expanded="false" aria-controls="additional-information">
+                      Additional information &#x25BE;
+                  </div>
 
                   <div class="collapse" id="additional-information">
                       
@@ -820,7 +820,7 @@
               <div class="row">
                 <div class="col-md-6 col-md-offset-4">
                   <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
-                  <button type="button" class="btn btn-primary">Publicate onetime concurs</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicateOnetime">Publicate onetime concurs</button>
                 </div>
               </div>
              </form>
@@ -868,12 +868,119 @@
      </div>
     </footer>
     <!-- END Footer-->
+      
+    <!-- Modal: onetime confirmation -->
+    <div id="publicateOnetime" class="modal modal-confirm-publication fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Are you sure that information correct?</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-6">
+                            <h5 class="theader">Cargo description</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Services type:</td>
+                                <td>Cargo transportation</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading address:</td>
+                                <td><img src="static/img/countries/nl.png"> NL, Dordrecht, NL-1512</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading dates:</td>
+                                <td>2015.07.15 - 2015.07.18</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery address:</td>
+                                <td><img src="static/img/countries/lt.png"> LT, Vilnius, Perkūnkiemio g. 13-91, LT-12114</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery dates:</td>
+                                <td>2015.07.17 - 2015.07.20</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Weight:</td>
+                                <td>2100 kg</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Count:</td>
+                                <td>1 car</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Cargo type:</td>
+                                 <td>Less-than-truckload (LTL)</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Description:</td>
+                                 <td>Car transportation from Dordrecht, NL to Vilnius, LT. We need to make it ASAP!</td>
+                              </tr>
+                            </table>
+            </div> 
+            <div class="col-md-6">
+                            <h5 class="theader">Additional information:</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Responsible person:</td>
+                                <td>Alexander Mukbil, +370 678 20768</td>
+                              </tr>
+                              
+                              <tr>
+                                <td class="field-name">ADR:</td>
+                                <td>5 class</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"> Temperature requirements:</td>
+                                <td>-12.5 &#8451;</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Lift options:</td>
+                                <td>On load, On unload</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Unloading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Additional information:</td>
+                                <td>Please be careful during load/unload this car. Thanks a lot.</td>
+                              </tr>
+                                
+                              <tr>
+                                <td class="field-name"><strong>Payment type:</strong></td>
+                                <td>wiretransfer during 5 business days</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"><strong>Offered price, &euro;</strong></td>
+                                <td>459.00</td>
+                              </tr>
+                            </table>
+            </div> 
+            <textarea class="form-control" id="emailList" placeholder="Add emails divided by comma to send link to this contest (ex., mail@domain.com, pastas@pastas.lt)"></textarea>
+          </div>
+          <div class="modal-footer clearfix">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Publicate onetime contest</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <script type="text/javascript">
         $('select').select2();
+        
+        $currentdate = moment().add(24, 'h').valueOf();
         $('.valid-till').datetimepicker({
             format: "YYYY-MM-DD HH:mm",
-            sideBySide: true
+            minDate: $currentdate,
+            sideBySide: true,
+            locale: "LT"
         });
         $('.date-picker').datetimepicker({
             format: "YYYY-MM-DD",

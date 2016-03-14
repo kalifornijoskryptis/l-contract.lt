@@ -722,9 +722,9 @@
                 </div>
 
                 <div class="col-md-5">
-                  <a class="additional-information-link" role="button" data-toggle="collapse" href="#additional-information" aria-expanded="false" aria-controls="additional-information">
-                    Additional information
-                  </a>
+                  <div class="additional-information-link collapsed" role="button" data-toggle="collapse" href="#additional-information" aria-expanded="false" aria-controls="additional-information">
+                      Additional information &#x25BE;
+                  </div>
 
                   <div class="collapse" id="additional-information">
                       
@@ -853,7 +853,7 @@
               <div class="row">
                 <div class="col-md-6 col-md-offset-4">
                   <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
-                  <button type="button" class="btn btn-primary">Publicate onetime concurs</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicateOnetime">Publicate onetime concurs</button>
                 </div>
               </div>
              </form>
@@ -863,20 +863,8 @@
           <div role="tabpanel" class="tab-pane fade" id="longterm">
             
             <!-- Longterm concurs creation form -->
-<div class="form form-new-longterm-concurs form-gray-bg">
+            <div class="form form-new-longterm-concurs form-gray-bg">
              <h1>Publicate new <strong>cargo transportation longterm</strong> concurs</h1>
-                
-            <!-- Nav tabs -->
-            <div class="col-md-12 col-md-offset-4 min-borders">
-                <ul class="nav nav-longterm-tabs nav-tabs" role="tablist">
-                  <li role="presentation" class="active"><a href="#concurs" aria-controls="concurs" role="tab" data-toggle="tab">New longterm concurs</a></li>
-                  <li role="presentation"><a href="#auction" aria-controls="auction" role="tab" data-toggle="tab">New longterm auction</a></li>
-                </ul>
-            </div>
-
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="concurs">
                      <form name="form-new-onetime-concurs">
 
                         <div class="col-md-6 min-borders">
@@ -890,9 +878,24 @@
                                 <input type="text" class="form-control date-picker" id="loading-date-till" placeholder="Contract ends at">
                               </div>
                               <div class="form-group">
-                                <textarea class="form-control" name="additional-information" placeholder="Concurs description" rows="6"></textarea>
+                                <textarea class="form-control" name="additional-information" placeholder="Contest name, conditions, additional information" rows="4"></textarea>
                               </div>
+                              
+                              <label>Cargo type</label>
+                              <div class="form-group">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary active" id="ftl-select">
+                                    <input type="radio" name="options" autocomplete="off" checked> Full-truck-load
+                                  </label>
+                                  <label class="btn btn-primary" id="ltl-select">
+                                    <input type="radio" name="options" autocomplete="off"> Less-than-truckload
+                                  </label>
+                                </div>
+                                <p class="help-block">Please select cargo type. If you changing this option after form filled - all data will lost, be careful.</p>
+                              </div>
+                                
                             </div>
+
                           </div>
                         </div>
 
@@ -901,57 +904,158 @@
                             <div class="panel-heading">Additional information</div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <textarea class="form-control" name="requirements" placeholder="Requirements" rows="3"></textarea>
+                                <textarea class="form-control" name="requirements" placeholder="Requirements" rows="8"></textarea>
                               </div>
                               <div class="form-group">
                                 <label>Contract conditions</label>
                                 <input type="file" class="form-control" id="exampleInputFile">
                                 <p class="help-block">Upload contract terms and conditions.</p>
                               </div>
-                              <!--<div class="form-group">
-                                <label>Concurs prices template</label>
-                                <input type="file" class="form-control" id="exampleInputFile">
-                                <p class="help-block">Upload concurs prices template.</p>
-                              </div>-->
-                              <button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#addPriceTable">Attach price table</button>&nbsp;<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#editPriceTable">Edit price table</button>
                             </div>
                           </div>
                         </div>
-
-                      <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                          <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
-                          <button type="button" class="btn btn-primary">Publicate longterm concurs</button>
-                          <button type="button" class="btn btn-default">Save as draft</button>
-                        </div>
-                      </div>
-                     </form>      
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="auction">
-                     <form name="form-new-onetime-concurs">
-
-                        <div class="col-md-12 min-borders">
+                         
+                        <!-- Full-truck-load form -->
+                        <div id="ftl-pricetable" class="col-md-12 min-borders">
                           <div class="panel panel-default">
-                            <div class="panel-heading">Send your request to us</div>
+
+                            <div class="panel-heading">Full-truck-load pricetable</div>
                             <div class="panel-body">
-                              <div class="form-group">
-                                <p>Please contact our team if you want to publicate longtime contract. We will adapt concurs according your requirements and needs.</p>
-                                <textarea class="form-control" name="requirements" placeholder="Request details" rows="10"></textarea>
-                              </div>
+                              <div id="pricetable" class="form-price-table">
+                                  <div class="line ftl-line-1 clearfix">
+                                      <div class="form-group line">
+                                        <input type="text" class="form-control" id="nr" placeholder="Nr." value="1" disabled>
+                                      </div>
+                                      <div class="form-group loading-country">
+                                        <select class="form-control" id="loading-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group loading-city">
+                                        <input type="text" class="form-control" id="loading-city" placeholder="City/ZIP" value="">
+                                      </div>
+                                      <div class="form-group delivery-country">
+                                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group delivery-city">
+                                        <input type="text" class="form-control" id="delivery-city" placeholder="City/ZIP" value="">
+                                      </div>
+                                      <div class="form-group car-type">
+                                        <select class="form-control" id="car-type">
+                                            <option value="0" selected>Car</option>
+                                            <option value="1">Tautliner 13,6m</option>
+                                            <option value="1">Refrigerator 13,6m</option>
+                                            <option value="1">Isotherm 13,6m</option>
+                                            <option value="1">Large 120cbm</option>
+                                            <option value="1">Mega 100cbm</option>
+                                            <option value="1">Container 20ft</option>
+                                            <option value="1">Container 40ft</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group cargo">
+                                        <input type="text" class="form-control" id="cargo-description" placeholder="Cargo" value="">
+                                      </div>
+                                      <div class="form-group qty">
+                                        <input type="text" class="form-control" id="qty" placeholder="Qty." value="">
+                                      </div>
+                                      <div class="form-group qty">
+                                        <select class="form-control" id="measure-units">
+                                            <option value="0" selected>EPal</option>
+                                            <option value="1">LDM</option>
+                                            <option value="1">CBM</option>
+                                            <option value="1">Kita</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group qty">
+                                        <input type="text" class="form-control" id="weight" placeholder="Weight" value="">
+                                      </div>
+                                      <div class="form-group deliveries">
+                                        <input type="text" class="form-control" id="deliveries-per-month" placeholder="Deliveries/month" value="">
+                                      </div>
+                                      <div class="form-group your-price">
+                                        <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                      </div>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                         </div>
+                         
+                       <!-- Less-than-truckload form -->
+                        <div id="ltl-pricetable" class="col-md-12 min-borders" style="display:none;">
+                          <div class="panel panel-default">
 
+                            <div class="panel-heading">Less-than-truckload pricetable</div>
+                            <div class="panel-body">
+                              <div id="pricetable" class="form-price-table">
+                                  <div class="line ltl-line-1 clearfix">
+                                      <div class="form-group line">
+                                        <input type="text" class="form-control" id="nr" placeholder="Nr." value="1" disabled>
+                                      </div>
+                                      <div class="form-group loading-country">
+                                        <select class="form-control" id="loading-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group loading-city">
+                                        <input type="text" class="form-control" id="loading-region" placeholder="Loading region (-s)" value="">
+                                      </div>
+                                      <div class="form-group delivery-country">
+                                        <select class="form-control" id="delivery-country" placeholder="Country">
+                                                <option value="0" selected>Country</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group delivery-city">
+                                        <input type="text" class="form-control" id="delivery-region" placeholder="Delivery region (-s)" value="">
+                                      </div>
+                                      <div class="form-group car-type">
+                                        <select class="form-control" id="car-type">
+                                            <option value="0" selected>Car</option>
+                                            <option value="1">Tautliner 13,6m</option>
+                                            <option value="1">Refrigerator 13,6m</option>
+                                            <option value="1">Isotherm 13,6m</option>
+                                            <option value="1">Large 120cbm</option>
+                                            <option value="1">Mega 100cbm</option>
+                                            <option value="1">Container 20ft</option>
+                                            <option value="1">Container 40ft</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group cargo">
+                                        <input type="text" class="form-control" id="cargo-description" placeholder="Cargo" value="">
+                                      </div>
+                                      <div class="form-group qty">
+                                        <select class="form-control" id="measure-units">
+                                            <option value="0" selected>EPal</option>
+                                            <option value="1">LDM</option>
+                                            <option value="1">CBM</option>
+                                            <option value="1">Kita</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="text" class="form-control" id="weight" placeholder="Weight (for 1 item)" value="">
+                                      </div>
+                                      <div class="form-group positions">
+                                        <button type="button" id="addPos" class="btn btn-sm btn-info" data-toggle="modal" data-target="#addPositions"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Positions</button>
+                                      </div>
+                                      <div class="form-group">
+                                        <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                         
                       <div class="row">
-                        <div class="col-md-12 text-center">
-                          <button type="button" class="btn btn-primary">Send request</button>
+                        <div class="col-md-6 col-md-offset-4">
+                          <input type="text" class="form-control date-picker valid-till" placeholder="Valid till">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#publicateLongterm">Publicate longterm concurs</button>
+                          <!--<button type="button" class="btn btn-default">Save as draft</button>-->
                         </div>
                       </div>
-
                      </form>  
-            </div>
-          </div>
             </div>
           </div>
         </div>
@@ -1207,379 +1311,200 @@
     </footer>
     <!-- END Footer-->
 
-    <!-- Modal: add price table -->
-    <div class="modal fade" id="addPriceTable" tabindex="-1" role="dialog" aria-labelledby="addPriceTableLabel">
-      <div class="modal-dialog modal-price-table" role="document">
+    <!-- Modal: onetime confirmation -->
+    <div id="publicateOnetime" class="modal modal-confirm-publication fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">New pricetable</h4>
+            <h4 class="modal-title">Are you sure that information correct?</h4>
           </div>
           <div class="modal-body">
-              <form class="form-price-table">
-                      <div class="form-group line">
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
-                      </div>
-                      <div class="form-group loading-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group loading-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
-                      </div>
-                      <div class="form-group delivery-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group delivery-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
-                      </div>
-                      <div class="form-group">
-                        <select class="form-control" id="car-type">
-                            <option value="0" selected>Select car type</option>
-                            <option value="1">Tautliner 13,6m</option>
-                            <option value="1">Refrigerator 13,6m</option>
-                            <option value="1">Isotherm 13,6m</option>
-                            <option value="1">Large 120cbm</option>
-                            <option value="1">Mega 100cbm</option>
-                            <option value="1">Container 20ft</option>
-                            <option value="1">Container 40ft</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="cargo-type">
-                            <option value="0" selected>FTL</option>
-                            <option value="1">LTL</option>
-                        </select>
-                      </div>
-                      <div class="form-group cargo">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="">
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="">
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="measure-units">
-                            <option value="0" selected>EPal</option>
-                            <option value="1">LDM</option>
-                            <option value="1">CBM</option>
-                            <option value="1">Kita</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="">
-                      </div>
-                      <div class="form-group deliveries">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="">
-                      </div>
-                      <div class="form-group your-price">
-                        <button type="button" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                      </div>
-                    </form>
+            <div class="col-md-6">
+                            <h5 class="theader">Cargo description</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Services type:</td>
+                                <td>Cargo transportation</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading address:</td>
+                                <td><img src="static/img/countries/nl.png"> NL, Dordrecht, NL-1512</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading dates:</td>
+                                <td>2015.07.15 - 2015.07.18</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery address:</td>
+                                <td><img src="static/img/countries/lt.png"> LT, Vilnius, Perkūnkiemio g. 13-91, LT-12114</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Delivery dates:</td>
+                                <td>2015.07.17 - 2015.07.20</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Weight:</td>
+                                <td>2100 kg</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Count:</td>
+                                <td>1 car</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Cargo type:</td>
+                                 <td>Less-than-truckload (LTL)</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Description:</td>
+                                 <td>Car transportation from Dordrecht, NL to Vilnius, LT. We need to make it ASAP!</td>
+                              </tr>
+                            </table>
+            </div> 
+            <div class="col-md-6">
+                            <h5 class="theader">Additional information:</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Responsible person:</td>
+                                <td>Alexander Mukbil, +370 678 20768</td>
+                              </tr>
+                              
+                              <tr>
+                                <td class="field-name">ADR:</td>
+                                <td>5 class</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"> Temperature requirements:</td>
+                                <td>-12.5 &#8451;</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Lift options:</td>
+                                <td>On load, On unload</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Loading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Unloading type:</td>
+                                <td>Back</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Additional information:</td>
+                                <td>Please be careful during load/unload this car. Thanks a lot.</td>
+                              </tr>
+                                
+                              <tr>
+                                <td class="field-name"><strong>Payment type:</strong></td>
+                                <td>wiretransfer during 5 business days</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name"><strong>Offered price, &euro;</strong></td>
+                                <td>459.00</td>
+                              </tr>
+                            </table>
+            </div> 
+            <textarea class="form-control" id="emailList" placeholder="Add emails divided by comma to send link to this contest (ex., mail@domain.com, pastas@pastas.lt)"></textarea>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer clearfix">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Add pricetable</button>
+            <button type="button" class="btn btn-primary">Publicate onetime contest</button>
           </div>
-        </div>
-      </div>
-    </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
       
-    <!-- Modal: edit price table -->
-    <div class="modal fade" id="editPriceTable" tabindex="-1" role="dialog" aria-labelledby="newOfferLabel">
-      <div class="modal-dialog modal-price-table" role="document">
+    <!-- Modal: longterm confirmation -->
+    <div id="publicateLongterm" class="modal modal-confirm-publication fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Edit pricetable</h4>
+            <h4 class="modal-title">Are you sure that information correct?</h4>
           </div>
           <div class="modal-body">
-                    <form class="form-price-table">
-                      <div class="form-group line">
-                        <label>Nr.</label>
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
-                      </div>
-                      <div class="form-group loading-country">
-                        <label>Loading country</label>
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group loading-city">
-                        <label>Loading city/ZIP</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
-                      </div>
-                      <div class="form-group delivery-country">
-                        <label>Delivery country</label>
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group delivery-city">
-                        <label>Delivery city/ZIP</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
-                      </div>
-                      <div class="form-group cargo">
-                        <label>Car</label>
-                        <select class="form-control" id="car-type">
-                            <option value="0">Select car type</option>
-                            <option value="1" selected>Tautliner 13,6m</option>
-                            <option value="1">Refrigerator 13,6m</option>
-                            <option value="1">Isotherm 13,6m</option>
-                            <option value="1">Large 120cbm</option>
-                            <option value="1">Mega 100cbm</option>
-                            <option value="1">Container 20ft</option>
-                            <option value="1">Container 40ft</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <label>Cargo type</label>
-                        <select class="form-control" id="cargo-type">
-                            <option value="0" selected>FTL</option>
-                            <option value="1">LTL</option>
-                        </select>
-                      </div>
-                      <div class="form-group cargo">
-                        <label>Cargo</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
-                      </div>
-                      <div class="form-group qty">
-                        <label>Qty.</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="5">
-                      </div>
-                      <div class="form-group qty">
-                        <label>Units</label>
-                        <select class="form-control" id="measure-units">
-                            <option value="0">EPal</option>
-                            <option value="1">LDM</option>
-                            <option value="1" selected>CBM</option>
-                            <option value="1">Kita</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <label>Weight</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="2000">
-                      </div>
-                      <div class="form-group deliveries">
-                        <label>Deliveries/month</label>
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="10">
-                      </div>
-                      <div class="form-group your-price">
-                        <label>Actions</label>
-                      <div class="clearfix"></div>
-                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                      </div>
-    
-                      <div class="clearfix"></div>
-    
-                      <!-- Row -->
-                      <div class="form-group line">
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="1" disabled>
-                      </div>
-                      <div class="form-group loading-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group loading-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
-                      </div>
-                      <div class="form-group delivery-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group delivery-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
-                      </div>
-                      <div class="form-group cargo">
-                        <select class="form-control" id="car-type">
-                            <option value="0">Select car type</option>
-                            <option value="1" selected>Tautliner 13,6m</option>
-                            <option value="1">Refrigerator 13,6m</option>
-                            <option value="1">Isotherm 13,6m</option>
-                            <option value="1">Large 120cbm</option>
-                            <option value="1">Mega 100cbm</option>
-                            <option value="1">Container 20ft</option>
-                            <option value="1">Container 40ft</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="cargo-type">
-                            <option value="0" selected>FTL</option>
-                            <option value="1">LTL</option>
-                        </select>
-                      </div>
-                      <div class="form-group cargo">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="7">
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="measure-units">
-                            <option value="0">EPal</option>
-                            <option value="1" selected>LDM</option>
-                            <option value="1">CBM</option>
-                            <option value="1">Kita</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="900">
-                      </div>
-                      <div class="form-group deliveries">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="5">
-                      </div>
-                      <div class="form-group your-price">
-                      <div class="clearfix"></div>
-                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                      </div>
-    
-                      <div class="clearfix"></div>
-    
-                      <!-- Row -->
-                      <div class="form-group line">
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="3" disabled>
-                      </div>
-                      <div class="form-group loading-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group loading-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="Malme, N-1225">
-                      </div>
-                      <div class="form-group delivery-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0">Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group delivery-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="LT-12114">
-                      </div>
-                      <div class="form-group cargo">
-                        <select class="form-control" id="car-type">
-                            <option value="0">Select car type</option>
-                            <option value="1" selected>Tautliner 13,6m</option>
-                            <option value="1">Refrigerator 13,6m</option>
-                            <option value="1">Isotherm 13,6m</option>
-                            <option value="1">Large 120cbm</option>
-                            <option value="1">Mega 100cbm</option>
-                            <option value="1">Container 20ft</option>
-                            <option value="1">Container 40ft</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="cargo-type">
-                            <option value="0" selected>FTL</option>
-                            <option value="1">LTL</option>
-                        </select>
-                      </div>
-                      <div class="form-group cargo">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="Forest/wood">
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="9">
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="measure-units">
-                            <option value="0" selected>EPal</option>
-                            <option value="1">LDM</option>
-                            <option value="1">CBM</option>
-                            <option value="1">Kita</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="500">
-                      </div>
-                      <div class="form-group deliveries">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="1">
-                      </div>
-                      <div class="form-group your-price">
-                        <button type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                      </div>
-    
-                      <div class="clearfix"></div>
-        
-                      <!-- Row -->
-                      <div class="form-group line">
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Nr." value="4" disabled>
-                      </div>
-                      <div class="form-group loading-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group loading-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
-                      </div>
-                      <div class="form-group delivery-country">
-                        <select class="form-control" id="delivery-country" placeholder="Country">
-                                <option value="0" selected>Country</option>
-                        </select>
-                      </div>
-                      <div class="form-group delivery-city">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="City/ZIP" value="">
-                      </div>
-                      <div class="form-group cargo">
-                        <select class="form-control" id="car-type">
-                            <option value="0" selected>Select car type</option>
-                            <option value="1">Tautliner 13,6m</option>
-                            <option value="1">Refrigerator 13,6m</option>
-                            <option value="1">Isotherm 13,6m</option>
-                            <option value="1">Large 120cbm</option>
-                            <option value="1">Mega 100cbm</option>
-                            <option value="1">Container 20ft</option>
-                            <option value="1">Container 40ft</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="cargo-type">
-                            <option value="0" selected>FTL</option>
-                            <option value="1">LTL</option>
-                        </select>
-                      </div>
-                      <div class="form-group cargo">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Cargo" value="">
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Qty." value="">
-                      </div>
-                      <div class="form-group qty">
-                        <select class="form-control" id="measure-units">
-                            <option value="0" selected>EPal</option>
-                            <option value="1">LDM</option>
-                            <option value="1">CBM</option>
-                            <option value="1">Kita</option>
-                        </select>
-                      </div>
-                      <div class="form-group qty">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Weight" value="">
-                      </div>
-                      <div class="form-group deliveries">
-                        <input type="text" class="form-control" id="exampleInputPassword3" placeholder="Deliveries/month" value="">
-                      </div>
-                      <div class="form-group your-price">
-                        <button type="button" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-                      </div>
-                    </form>
+                        <div class="col-md-6 min-borders">
+                            <h5 class="theader">Concurs description</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Services type:</td>
+                                <td>Cargo transportation</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Terms:</td>
+                                <td>2 years (2015.07.17 - 2017.07.17)</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Concurs type:</td>
+                                <td>Concurs</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Valid till:</td>
+                                <td>2015.12.15</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Responsible person:</td>
+                                <td>Nerijus Valeiko, +37067820785</td>
+                              </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 min-borders">
+                            <h5 class="theader">Additional information</h5>
+                            <table class="information-table">
+                              <tr>
+                                <td class="field-name">Description:</td>
+                                <td>Forest transportation from Malme, N to Kaunas, LT</td>
+                              </tr>
+                              <tr>
+                                <td class="field-name">Requirements:</td>
+                                <td>You should have on your company balance 1000 Volvo FH17 trucks</td>
+                              </tr>
+                            </table>
+                        </div>
+            <textarea class="form-control" id="emailList" placeholder="Add emails divided by comma to send link to this contest (ex., mail@domain.com, pastas@pastas.lt)"></textarea>
+          </div>
+          <div class="modal-footer clearfix">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Publicate onetime contest</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+      
+    <!-- Modal: add/edit positions -->
+    <div id="addPositions" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add positions for EPal (1 item - 600 kg)</h4>
+          </div>
+          <div class="modal-body">
+            <p>Please add positions, carriers will provide prices for each one.</p>
+            <div id="positionLines">
+            <div class="position-line position-line-1 clearfix">
+              <div class="form-group position">
+                <input type="text" class="form-control" id="nr" placeholder="Nr." value="1" disabled>
+                <input type="text" class="form-control" id="positionName" placeholder="Position name (ex. 1 palete, 300kg box etc.)" value="">
+                <button type="button" id="addPosLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+              </div>
+            </div>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
-        </div>
-      </div>
-    </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
       
     <script type="text/javascript">
         /* Custom selects */
-        $('select').select2();
+        $('.form-new-onetime-concurs select').select2();
         
         /* Valid till validation */
-        $currentdate = moment().valueOf();
+        $currentdate = moment().add(24, 'h').valueOf();
         $('.valid-till').datetimepicker({
             format: "YYYY-MM-DD HH:mm",
             minDate: $currentdate,
@@ -1615,6 +1540,119 @@
         });
         /* Tooltips */
         $('[data-toggle="tooltip"]').tooltip();
+    </script>
+      
+    <!-- Form logics script -->
+    <script type="text/javascript">
+            
+            /* --- Counters, div vars --- */ 
+            var scntftlDiv = $('#ftl-pricetable #pricetable');
+            var scntltlDiv = $('#ltl-pricetable #pricetable');
+            var scntposDiv = $('#addPositions #positionLines');
+        
+            var iftl = scntftlDiv.size() + 1;
+            var iltl = scntltlDiv.size() + 1;
+            var ipos = scntposDiv.size() + 1;
+        
+            /* --- Check what cargo type currently selected --- */
+            $( '#ftl-select' ).click(function() {
+               if (!$(this).find('input').is(':checked')) {
+
+                    $( '#ltl-pricetable' ).slideUp( 500 );
+                    $( '#ftl-pricetable' ).slideDown( 500 );
+                    $( '#ltl-pricetable #pricetable' ).children().not( ':last-child' ).remove();
+                   
+               }
+            });
+            
+            $( '#ltl-select' ).click(function() {
+               if (!$(this).find('input').is(':checked')) {
+                   
+                    $( '#ftl-pricetable' ).slideUp( 500 );
+                    $( '#ltl-pricetable' ).slideDown( 500 );
+                    $( '#ftl-pricetable #pricetable' ).children().not( ':last-child' ).remove();
+                   
+               }
+            });
+           
+            /* --- Add new FTL line --- */
+            $(document).on('click', '#ftl-pricetable #pricetable #addLine', function(){
+            $( '<div class="line ftl-line-1 clearfix"><div class="form-group line"><input type="text" class="form-control" id="nr" placeholder="Nr." value="' + iftl +'" disabled></div><div class="form-group loading-country"><select class="form-control" id="loading-country" placeholder="Country"><option value="0" selected>Country</option></select></div><div class="form-group loading-city"><input type="text" class="form-control" id="loading-city" placeholder="City/ZIP" value=""></div><div class="form-group delivery-country"><select class="form-control" id="delivery-country" placeholder="Country"><option value="0" selected>Country</option></select></div><div class="form-group delivery-city"><input type="text" class="form-control" id="delivery-city" placeholder="City/ZIP" value=""></div><div class="form-group car-type"><select class="form-control" id="car-type"><option value="0" selected>Car</option><option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="cargo-description" placeholder="Cargo" value=""> </div><div class="form-group qty"> <input type="text" class="form-control" id="qty" placeholder="Qty." value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group qty"> <input type="text" class="form-control" id="weight" placeholder="Weight" value=""> </div><div class="form-group deliveries"> <input type="text" class="form-control" id="deliveries-per-month" placeholder="Deliveries/month" value=""> </div><div class="form-group your-price"> <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></div></div' ).appendTo(scntftlDiv);
+                
+            /* Remove add button classes for added line and add remove button classes */
+            $(this).removeClass('btn-success')
+               .removeClass('glyphicon-plus')
+               .addClass('btn-primary')
+               .removeClass('glyphicon-minus')
+               .attr('id','removeFTLLine');
+            
+            $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            iftl++;
+                
+            return false;
+            });
+            
+            /* --- Add new LTL line --- */
+            $(document).on('click', '#ltl-pricetable #pricetable #addLine', function(){
+            $( '<div class="line ltl-line-1 clearfix"> <div class="form-group line"> <input type="text" class="form-control" id="nr" placeholder="Nr." value="' + iltl + '" disabled> </div><div class="form-group loading-country"> <select class="form-control" id="loading-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group loading-city"> <input type="text" class="form-control" id="loading-region" placeholder="Loading region (-s)" value=""> </div><div class="form-group delivery-country"> <select class="form-control" id="delivery-country" placeholder="Country"> <option value="0" selected>Country</option> </select> </div><div class="form-group delivery-city"> <input type="text" class="form-control" id="delivery-region" placeholder="Delivery region (-s)" value=""> </div><div class="form-group car-type"> <select class="form-control" id="car-type"> <option value="0" selected>Car</option> <option value="1">Tautliner 13,6m</option> <option value="1">Refrigerator 13,6m</option> <option value="1">Isotherm 13,6m</option> <option value="1">Large 120cbm</option> <option value="1">Mega 100cbm</option> <option value="1">Container 20ft</option> <option value="1">Container 40ft</option> </select> </div><div class="form-group cargo"> <input type="text" class="form-control" id="cargo-description" placeholder="Cargo" value=""> </div><div class="form-group qty"> <select class="form-control" id="measure-units"> <option value="0" selected>EPal</option> <option value="1">LDM</option> <option value="1">CBM</option> <option value="1">Kita</option> </select> </div><div class="form-group"> <input type="text" class="form-control" id="weight" placeholder="Weight (for 1 item)" value=""> </div><div class="form-group positions"> <button type="button" id="addPos" class="btn btn-sm btn-info" data-toggle="modal" data-target="#addPositions"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Positions</button> </div><div class="form-group"> <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button> </div></div>' ).appendTo(scntltlDiv);
+                
+            /* Remove add button classes for added line and add remove button classes */
+            $(this).removeClass('btn-success')
+               .removeClass('glyphicon-plus')
+               .addClass('btn-primary')
+               .removeClass('glyphicon-minus')
+               .attr('id','removeLTLLine');
+            
+            $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            iltl++;
+                
+            return false;
+        });
+       
+            /* --- Add new position line --- */
+            $(document).on('click', '#addPositions #addPosLine', function(){
+            $( '<div class="position-line position-line-1 clearfix"> <div class="form-group position"> <input type="text" class="form-control" id="nr" placeholder="Nr." value="' + ipos + '" disabled> <input type="text" class="form-control" id="positionName" placeholder="Position name (ex. 1 palete, 300kg box etc.)" value=""> <button type="button" id="addPosLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></div></div>' ).appendTo(scntposDiv);
+                
+            /* Remove add button classes for added line and add remove button classes */
+            $(this).removeClass('btn-success')
+               .removeClass('glyphicon-plus')
+               .addClass('btn-primary')
+               .removeClass('glyphicon-minus')
+               .attr('id','removePosLine');
+            
+            $(this).find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+            ipos++;
+                
+            return false;
+        });
+        
+        /* --- Remove FTL line --- */
+        $(document).on('click', '#removeFTLLine', function() {
+            if( iftl > 0 ) {
+                $(this).parents('.line').remove();
+                iftl--;
+            }
+            return false;
+        });
+        
+        /* --- Remove LTL line --- */
+        $(document).on('click', '#removeLTLLine', function() {
+            if( iltl > 0 ) {
+                $(this).parents('.line').remove();
+                iltl--;
+            }
+            return false;
+        });
+        
+        /* --- Remove position line --- */
+        $(document).on('click', '#removePosLine', function() {
+            if( iltl > 0 ) {
+                $(this).parents('.position-line').remove();
+                ipos--;
+            }
+            return false;
+        });
+                
     </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

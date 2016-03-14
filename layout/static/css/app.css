@@ -1590,10 +1590,28 @@ input.date-picker {
     font-weight: 500;    
 }
 .form-new-onetime-concurs .additional-information-link {
+    color: #333;
     font-size: 18px;
-    margin-bottom: 10px;
+    padding: 5px 15px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+.form-new-onetime-concurs .additional-information-link.collapsed {
+    margin-bottom: 20px;
+    color: #e31a27;
     font-weight: 300;
-    border-bottom: 1px dotted;
+}
+.form-new-onetime-concurs #additional-information {
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05); 
 }
 .form-subscription .additional-information-link {
     font-size: 18px;
@@ -1714,9 +1732,7 @@ input.date-picker {
     color: #333;
 }
 .form-new-onetime-concurs .additional-info {
-    margin: 15px 0;
-    padding: 0 0 22px 0;
-    border-bottom: 1px solid #ccc;
+    margin: 10px 0 10px 0;
 }
 .form-new-onetime-concurs .additional-info textarea {
     font-size: 11px;
@@ -2192,7 +2208,9 @@ span.rating > .negative {
     margin-right: 5px;
     float: left;
 }
-
+.modal-confirm-publication .modal-dialog {
+    width: 60%;
+}
 @media screen and (max-width: 767px) {
     .modal-dialog.modal-price-table {
         width: 85%;
