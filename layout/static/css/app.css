@@ -252,6 +252,13 @@ label {
     text-align: center;
     border-top: none;
 }
+#uploadFile .input-file {
+    width: 83%;
+    height: 37px;
+}
+#fillForm .modal-dialog {
+    width: 60%;
+}
 /* END Modals */
 
 /* Forms */
