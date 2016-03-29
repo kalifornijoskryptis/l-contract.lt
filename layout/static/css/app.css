@@ -2036,6 +2036,9 @@ span.rating > .negative {
 .longterm-customer .list-group-item {
     margin: 3px 0;
 }
+.longterm-customer-file .customer-file-priority {
+    margin: 5px 0px 0px 20px;
+}
 .concurs-card .list-group-item {
     display: inline-block;
     width: 100%;
@@ -2133,6 +2136,9 @@ span.rating > .negative {
 .concurs-card .form-inline input {
     width: 48%; 
     float: left;
+}
+.longterm-customer .list-group-item .list-group-item-heading:after {
+    content: "▾";
 }
 @media screen and (max-width: 767px) {
     .concurs-card .list-group-item .actual-timer {
