@@ -136,29 +136,26 @@
 
                             <div class="panel-heading">Concurs description and terms</div>
                             <div class="panel-body">
-                                <label class="label-inline">Contract start and finish dates</label>
+
+                              <div class="form-group">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-primary active" id="table-select" data-toggle="tooltip" data-placement="top" title="Please select this option to start full truck load contest with pre-generated table.">
+                                    <input type="radio" name="options" autocomplete="off" checked> Pre-generated pricetable
+                                  </label>
+                                  <label class="btn btn-primary" id="file-select" data-toggle="tooltip" data-placement="top" title="Please select this option in you have contest with customized tables. Carriers and customers will provide information by your file template.">
+                                    <input type="radio" name="options" autocomplete="off"> Custom file upload
+                                  </label>
+                                </div>
+                                <p class="help-block">Please select contest type: pre-generated table or custom file upload.</p>
+                              </div>
+                                
+                              <label class="label-inline">Contract start and finish dates</label>
                               <div class="form-group form-inline">
                                 <input type="text" class="form-control date-picker" id="loading-date-from" placeholder="Contract starts from">
                                 <input type="text" class="form-control date-picker" id="loading-date-till" placeholder="Contract ends at">
                               </div>
                               <div class="form-group">
-                                <textarea class="form-control" name="additional-information" placeholder="Contest name, conditions, additional information" rows="4"></textarea>
-                              </div>
-                              
-                              <label>Contest type</label>
-                              <div class="form-group">
-                                <div class="btn-group" data-toggle="buttons">
-                                  <label class="btn btn-primary active" id="ftl-select" data-toggle="tooltip" data-placement="top" title="Please select this option to start full truck load contest with pre-generated table.">
-                                    <input type="radio" name="options" autocomplete="off" checked> Full-truck-load
-                                  </label>
-                                  <label class="btn btn-primary" id="ltl-select" data-toggle="tooltip" data-placement="top" title="Please select this option to start less-than-truckload contest with pre-generated table.">
-                                    <input type="radio" name="options" autocomplete="off"> Less-than-truckload
-                                  </label>
-                                  <label class="btn btn-primary" id="file-select" data-toggle="tooltip" data-placement="top" title="Please select this option in you have contest with customized tables. Carriers and customers will provide information by your file template.">
-                                    <input type="radio" name="options" autocomplete="off"> File upload
-                                  </label>
-                                </div>
-                                <p class="help-block">Please select contest type. If you change this option during form filling, all data will lost, be careful.</p>
+                                <textarea class="form-control" name="additional-information" placeholder="Contest name, conditions, additional information" rows="6"></textarea>
                               </div>
                                 
                             </div>
@@ -170,6 +167,20 @@
                           <div class="panel panel-default">
                             <div class="panel-heading">Additional information</div>
                             <div class="panel-body">
+                              <div id="cargo-type-block">
+                              <div class="form-group">
+                                <div class="btn-group" data-toggle="buttons">
+                                  <label class="btn btn-default active" id="ftl-select" data-toggle="tooltip" data-placement="top" title="Please select this option to start full truck load contest with pre-generated table.">
+                                    <input type="radio" name="options" autocomplete="off" checked> Full-truck-load cargo
+                                  </label>
+                                  <label class="btn btn-default" id="ltl-select" data-toggle="tooltip" data-placement="top" title="Please select this option to start less-than-truckload contest with pre-generated table.">
+                                    <input type="radio" name="options" autocomplete="off"> Less-than-truckload cargo
+                                  </label>
+                                    
+                                </div>
+                                <p class="help-block">Please select contest type. If you change this option during table begin edited - all data will lost, be careful.</p>
+                              </div>
+                              </div>
                               <div class="form-group">
                                 <textarea class="form-control" name="requirements" placeholder="Requirements" rows="4"></textarea>
                               </div>
@@ -177,11 +188,6 @@
                                 <label>Contract conditions</label>
                                 <input type="file" class="form-control" id="filefield-contract">
                                 <p class="help-block">Upload contract terms and conditions.</p>
-                              </div>
-                              <div class="form-group" id="file-pricetable" style="display:none;">
-                                <label>Contest prices template</label>
-                                <input type="file" class="form-control" id="filefield-template">
-                                <p class="help-block">Upload contest prices template for carriers.</p>
                               </div>
                             </div>
                           </div>
@@ -314,6 +320,32 @@
                                       <div class="form-group">
                                         <button type="button" id="addLine" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                         
+                       <!-- File upload form -->
+                        <div id="file-pricetable" class="col-md-12 min-borders" style="display:none;">
+                          <div class="panel panel-default">
+
+                            <div class="panel-heading">File pricetable</div>
+                            <div class="panel-body">
+                              <div id="pricetable" class="form-price-table">
+                                  <div class="line ltl-line-1 clearfix">
+                                      <div class="form-group line">
+                                        <input type="text" class="form-control" id="nr" placeholder="Nr." value="1" disabled>
+                                      </div>
+
+                                      <div class="form-group" style="width: 84.5%; margin-right: 5px;">
+                                        <input type="text" class="form-control" id="file-upload-field" placeholder="Please select file for upload..." value="">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <button type="button" id="uploadFile" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Upload file</button>
+                                      </div>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -535,9 +567,21 @@
                    
                     $( '#ftl-pricetable' ).slideUp( 500 );
                     $( '#ltl-pricetable' ).slideUp( 500 );
+                    $( '#cargo-type-block' ).slideUp( 500 );
                     $( '#file-pricetable' ).slideDown( 500 );
                     $( '#ftl-pricetable #pricetable' ).children().not( ':last-child' ).remove();
                     $( '#ltl-pricetable #pricetable' ).children().not( ':last-child' ).remove();
+                   
+               }
+            });
+        
+            $( '#table-select' ).click(function() {
+               if (!$(this).find('input').is(':checked')) {
+                   
+                    $( '#ftl-select' ).click();
+                    $( '#cargo-type-block' ).slideDown( 500 );
+                    $( '#file-pricetable' ).slideUp( 500 );
+                    $( '#file-pricetable #pricetable' ).children().not( ':last-child' ).remove();
                    
                }
             });

@@ -340,8 +340,8 @@
             <p>Please select to upload file with cargo carry conditions or fill the same form.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default btn-way" data-toggle="modal" data-target="#uploadFile">Upload file and attach to offer</button>
-            <button type="button" class="btn btn-default btn-way" data-toggle="modal" data-target="#fillForm">Fill and attach online form to offer</button>
+            <button type="button" class="btn btn-default btn-way" data-toggle="modal" data-target="#uploadFile"><img class="small-icon" src="static/img/icon-file-neutral.png"> Upload file and attach</button>
+            <button type="button" class="btn btn-default btn-way" data-toggle="modal" data-target="#fillForm"><img class="small-icon" src="static/img/icon-form-neutral.png"> Fill online form and attach</button>
           </div>
         </div>
       </div>
@@ -358,43 +358,104 @@
           <div class="modal-body">
             <div class="panel panel-default">
               <div class="panel-body">
-                <div class="col-md-4 min-borders">
-                    <p>Loading dates and place: 2015.07.15 - 2015.07.20</p>
-                    <p>Delivery dates and place: 2015.07.23 - 2015.07.25</p>
-                    <p>Weight and cargo type: 24t, FTL</p>
-                    <p>Count: 240 boxes</p>
-                </div>
-                <div class="col-md-4 min-borders">
-                    <p>Description: wood</p>
-                    <p>Lift options: on load, on unload</p>
-                    <p>Loading type: side</p>
-                    <p>Unloading type: side</p>
-                </div>
-                <div class="col-md-4 min-borders">
-                    <p>Additional info: some text</p>
-                    <p>Payment type: wiretransfer in 45 d.</p>
-                    <p>Offered price, €: 500,00</p>
-                </div>
-                <div class="col-md-6 min-borders">
-                    <p>Customer:</p>
-                    <p>TempusTrans, UAB, Sarunas Peikstenis, 861113748</p>
-                </div>
-                <div class="col-md-6 min-borders">
-                    <p>Carrier:</p>
-                    <p>IkiTrans, UAB, Aunas Laikstas, 852115588</p>
+                <div class="col-md-12 min-borders">
+                    <table width="100%" class="table-condensed">
+                      <tr>
+                        <td>Loading dates and place:</td>
+                        <td>2015.07.15 - 2015.07.20</td>
+                        <td>Description:</td>
+                        <td>wood</td>
+                        <td>Additional info:</td>
+                        <td>some text</td>
+                      </tr>
+                      <tr>
+                        <td>Delivery dates and place:</td>
+                        <td>2015.07.23 - 2015.07.25</td>
+                        <td>Lift options:</td>
+                        <td>on load, on unload</td>
+                        <td>Payment type:</td>
+                        <td>wiretransfer in 45 d.</td>
+                      </tr>
+                      <tr>
+                        <td>Weight and cargo type:</td>
+                        <td>24t, FTL</td>
+                        <td>Loading type:</td>
+                        <td>side</td>
+                        <td>Offered price, €:</td>
+                        <td>500,00</td>
+                      </tr>
+                      <tr>
+                        <td>Count:</td>
+                        <td>240 boxes</td>
+                        <td>Unloading type:</td>
+                        <td>side</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                    
+                    <table width="100%" class="table-condensed">
+                      <tr>
+                        <th>Customer:</th>
+                        <th>Customer:</th>
+                      </tr>
+                      <tr>
+                        <td><a href="#">TempusTrans, UAB</a>, Sarunas Peikstenis, 861113748</td>
+                        <td><a href="#">IkiTrans, UAB</a>, Sarunas Peikstenis, 861113748</td>
+                      </tr>
+                    </table>
                 </div>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="col-md-6 min-borders">
-                    <p>...</p>
+                    <h4>Cargo sender information</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Cargo sender company name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="ZIP/City">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Address and building name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Contact person">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Contact phone">
+                    </div>
                 </div>
                 <div class="col-md-6 min-borders">
-                    <p>...</p>
+                    <h4>Cargo receiver information</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Cargo sender company name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Country">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="ZIP/City">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Address and building name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Contact person">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Contact phone">
+                    </div>
                 </div>
                 <div class="col-md-12 min-borders">
-                    <p>...</p>
+                    <h4>Carry conditions</h4>
+                    <div class="form-group">
+                        <textarea class="form-control" name="carry-conditions" placeholder="Please describe here carry conditions." rows="4"></textarea>
+                    </div>
                 </div>
               </div>
             </div>

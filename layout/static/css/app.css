@@ -259,6 +259,12 @@ label {
 #fillForm .modal-dialog {
     width: 60%;
 }
+#fillForm .form-group {
+    margin-bottom: 5px;
+}
+#addConditions .small-icon {
+    margin: 10px 0px;
+}
 /* END Modals */
 
 /* Forms */
